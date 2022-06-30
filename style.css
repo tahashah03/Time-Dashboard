@@ -1,0 +1,272 @@
+:root {
+    --color-light-orange: hsl(15, 100%, 70%);
+    --color-soft-blue: hsl(195, 74%, 62%);
+    --color-light-red: hsl(348, 100%, 68%);
+    --color-lime-green: hsl(145, 58%, 55%);
+    --color-soft-orange: hsl(43, 84%, 65%);
+    --color-violet: hsl(264, 64%, 52%);
+
+    /* Neutral  */
+    --color-dark-blue: hsl(235, 46%, 20%);
+    --color-pale-blue: hsl(236, 100%, 87%);
+    --color-very-dark-blue: hsl(226, 43%, 10%);
+    --color-desaturated-blue: hsl(235, 45%, 61%);
+
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Rubik',
+        sans-serif;
+}
+
+@media only screen and (max-width: 72em) {
+    html {
+        font-size: 50%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--color-very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 25rem));
+    grid-template-rows: repeat(2, minmax(auto, 25rem));
+    gap: 3rem;
+    padding: 5rem 4rem;
+}
+
+@media only screen and (max-width: 72em) {
+    .container {
+        grid-template-columns: repeat(2, minmax(auto, 60rem));
+        grid-template-rows: 20rem repeat(3, 18rem);
+    }
+}
+
+@media only screen and (max-width: 41em) {
+    .container {
+        grid-template-columns: minmax(auto, 70rem);
+        grid-template-rows: 20rem repeat(6, 18rem);
+    }
+}
+
+.profile-card {
+    color: #fff;
+    background-color: var(--color-dark-blue);
+    grid-row: 1/3;
+    border-radius: 1.5rem;
+}
+
+@media only screen and (max-width: 72em) {
+    .profile-card {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+}
+
+@media only screen and (max-width: 41em) {
+    .profile-card {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+}
+
+.profile-name {
+    background-color: #5847eb;
+    border-radius: 1.5rem;
+    height: 70%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 72em) {
+    .profile-name {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.profile-name img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 5rem;
+    border: 3px solid white;
+    margin-right: 2rem;
+}
+
+.profile-name h1 {
+    font-size: 3.8rem;
+    font-weight: 300;
+    height: 11rem;
+}
+
+@media only screen and (max-width: 72em) {
+    .profile-name h1 {
+        font-size: 3.5rem;
+    }
+}
+
+.profile-name h1 span {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--color-pale-blue);
+}
+
+.profile-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+@media only screen and (max-width: 72em) {
+    .profile-nav {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2rem;
+    }
+}
+
+.profile-nav a {
+    display: inline;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--color-desaturated-blue);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 72em) {
+    .profile-nav a {
+        font-size: 2rem;
+    }
+}
+
+.activity-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.card-logo {
+    height: 100%;
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+.card-content {
+    background-color: var(--color-dark-blue);
+    height: 84%;
+    width: 100%;
+    color: #fff;
+
+    position: absolute;
+    top: 4rem;
+    border-radius: 1.5rem;
+
+    padding: 3.5rem;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.card-content:hover {
+    background-color: hsl(235, 53%, 28%);
+}
+
+.work {
+    background-color: var(--color-light-orange);
+}
+
+.play {
+    background-color: var(--color-soft-blue);
+}
+
+.study {
+    background-color: var(--color-light-red);
+}
+
+.exercise {
+    background-color: var(--color-lime-green);
+}
+
+.social {
+    background-color: var(--color-violet);
+}
+
+.selfcare {
+    background-color: var(--color-soft-orange);
+}
+
+.img {
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    height: 6rem;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.card-icon {
+    justify-self: end;
+}
+
+.card-current-time {
+    font-size: 4.5rem;
+    font-weight: 300;
+}
+
+.card-previous-time {
+    font-size: 1.2rem;
+    font-weight: 400;
+    grid-row: 3/4;
+    grid-column: 1/3;
+    color: var(--color-desaturated-blue);
+}
+
+@media only screen and (max-width: 72em) {
+    .card-previous-time {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        justify-self: end;
+        font-size: 1.5rem;
+    }
+}
+
+a.active {
+    color: #fff;
+    transition: .25s ease;
+}
+
+.attribution {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #fff;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
